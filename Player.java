@@ -71,20 +71,20 @@ public class Player
 						chips = addChips(chips, wager);
 						System.out.println("You win!");
 						System.out.println();
-						bet(chips);
+						
 					}	
 					else if ( p_total < d_total )
 					{
 						chips = removeChips(chips, wager);
 						System.out.println("You lose!");
 						System.out.println();
-						bet(chips);
+						
 					}
 					else
 					{
 						System.out.println("It's a push!  Nobody wins.");
 						System.out.println();
-						bet(chips);
+						
 					}				
 				}
 			
@@ -155,8 +155,10 @@ public class Player
 		
 		if ( wager > money )
 		{
+			System.out.println();
 			System.out.println("You can not bet " + wager + ".  You only have " + money + ".");
-			return 0;
+			System.out.println();
+			return bet(money);
 		}
 		else
 			return wager;
@@ -166,12 +168,14 @@ public class Player
 	public int addChips(int money, int bet)
 	{
 		// Adds chips to the current amount when player wins
+		bet = bet(money);
 		return money + bet;
 	}
 	
 	public int removeChips(int money, int bet)
 	{
 		// Removes chips from current amount when player wins
+		bet = bet(money);
 		return money - bet;
 	}	
 	

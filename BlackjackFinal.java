@@ -78,24 +78,24 @@ public class BlackjackFinal
 					
 			}
 			
-			restart(chips);
 			p.bet(chips);
 			
 		} while ( chips > 0 );
 		
 		System.out.println();
+		restart(chips);
+
 	}
 	
-	public static int restart(int chips)
+	public static void restart(int chips)
 	{
 		//This just checks to make sure that the player is unable to bet if they are out of chips.
 		if (chips <= 0)
 		{
+			
 			System.out.println("You're all out of chips.  That's the end of the line.");
-			return 0;
 		}
-		else
-			return chips;
+
 	}
 	
 }
